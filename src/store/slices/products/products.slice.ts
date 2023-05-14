@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export type IProductsSlice = Product[]
-
-export interface Product {
-  id: number;
-  name: string;
-  colors: Color[];
+export interface IProductsSlice {
+  products: IProduct[];
 }
 
-export interface Color {
+export interface IProduct {
+  id: number;
+  name: string;
+  colors: IColor[];
+}
+
+export interface IColor {
   id: number;
   name: string;
   images: string[];
@@ -17,14 +19,16 @@ export interface Color {
   sizes: number[];
 }
 
-const initialState: IProductsSlice = []
+const initialState: IProductsSlice = {
+  products: [],
+};
 
 export const ProductsSlice = createSlice({
   name: "Products",
   initialState,
   reducers: {
     ProductsGet: (state, action) => {
-      state = action.payload;
+      state.products = action.payload;
     },
   },
 });

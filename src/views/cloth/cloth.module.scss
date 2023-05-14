@@ -1,0 +1,37 @@
+@mixin ProductButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100px;
+}
+
+.ProductImage {
+  width: 400px;
+  height: 100%;
+}
+.ProductPage {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+}
+.ImagesButtons {
+  display: flex;
+  gap: 40px;
+}
+.ColorButtons {
+  @include ProductButtons;
+}
+.SizeButtons {
+  @include ProductButtons;
+}
+.Buttons {
+  padding: 20px;
+}
+button {
+  padding: 20px;
+  border: 1px solid #00000070;
+}
+button:disabled {
+  opacity: 0.5;
+}
